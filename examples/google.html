@@ -12,10 +12,19 @@
 <script type='text/javascript'>
 var map = new L.Map('map', {center: new L.LatLng(53.9618, 58.4277), zoom: 13});
 var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-var ggl = new L.Google();
-var ggl2 = new L.Google('TERRAIN');
+// SATELLITE, ROADMAP, HYBRID, TERRAIN
+var ggH = new L.Google('HYBRID');
+var ggR = new L.Google('ROADMAP');
+var ggS = new L.Google('SATELLITE');
+var ggT = new L.Google('TERRAIN');
 map.addLayer(ggl);
-map.addControl(new L.Control.Layers( {'OSM':osm, 'Google':ggl, 'Google Terrain':ggl2}, {}));
+map.addControl(new L.Control.Layers({
+	'OSM':osm, 
+	'Google Hybrid':ggH,
+	'Google Roadmap': ggR,
+	'Google Satellite' ggS,
+	'Google Terrain':ggT
+	}, {}));
 </script>
  
 </body>
