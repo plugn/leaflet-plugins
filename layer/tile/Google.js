@@ -4,8 +4,7 @@
 
 /* global google: true */
 
-// L.Google = L.Class.extend
-L.Google = L.TileLayer.extend({
+L.Google = L.Class.extend({
 	includes: L.Mixin.Events,
 
 	options: {
@@ -72,6 +71,10 @@ L.Google = L.TileLayer.extend({
 		return this.options.attribution;
 	},
 
+	getContainer: function () {
+		return this._container;
+	},
+	
 	setOpacity: function(opacity) {
 		this.options.opacity = opacity;
 		if (opacity < 1) {
